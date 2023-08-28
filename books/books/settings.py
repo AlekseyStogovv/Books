@@ -38,10 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'debug_toolbar',
     'social_django',
 
     'store',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'debug_toolbar_force.middleware.ForceDebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'books.urls'
@@ -147,3 +151,7 @@ SOCIAL_AUTH_POSTGRES_JSONFIELD = True
 
 SOCIAL_AUTH_GITHUB_KEY = '78f18507f04b3d26431d'
 SOCIAL_AUTH_GITHUB_SECRET = 'ad2ad17ef0c5a7b3c8330e8661d1e6173375fe6b'
+
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
